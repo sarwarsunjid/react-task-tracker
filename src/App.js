@@ -2,7 +2,7 @@
 function App() {
   return (
     <div className="App">
-      <h1>Creating First Project on React</h1>
+      <h1>Hello this is my first react component</h1>
     </div>
   );
 }
