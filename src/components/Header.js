@@ -4,19 +4,31 @@
  * then write rafceon this file and then press a tab you will get this snippets
  */
 
-import React from 'react'
+//import React from 'react'
 
-const Header = (props) => {
+/***
+ * for using PropTypes we write impt then press, 
+ * then we can see the below line  
+ */
+import PropTypes from 'prop-types'
+
+
+
+const Header = ({title}) => {
     return (
         <header>
             {/* <h1>Hello {props.title} </h1> */}
-            <h1>{props.title} </h1>
+            <h1>{title} </h1>
         </header>
     )
 }
 
-Header.defaultProps ={
+Header.defaultProps = {
     title: 'Task Tracker',
+}
+
+Header.propTypes = {
+    title: PropTypes.string.isRequired,
 }
 
 export default Header

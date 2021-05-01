@@ -1,11 +1,12 @@
 //Create New Component
 //import React from 'react'
-import Header from './components/Header.js'
+import Header from './components/Header'
 
 function App() {
   return (
     <div className="App">
       {/* <Header title="Programmer" />  */}
+      {/* <Header title={1} /> */}
       <Header />
 
     </div>
