@@ -26,7 +26,10 @@ const Header = ({title}) => {
 
             {/* compile index.css files for styling component */}
             <h1>{title}</h1>
-            <Button />
+            <Button color ='green' text='Hello' />
+            {/* reusable component and different props */}
+            <Button color ='red' text='Hello' />
+            <Button color ='green' text='Hello' />
         </header>
     )
 }
