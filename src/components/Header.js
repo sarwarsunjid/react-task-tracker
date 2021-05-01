@@ -13,22 +13,37 @@
 import PropTypes from 'prop-types'
 
 
-
 const Header = ({title}) => {
     return (
-        <header>
+        <header className = 'header'>
             {/* <h1>Hello {props.title} </h1> */}
-            <h1>{title} </h1>
+
+            {/* another approach for styling below */}
+            {/* <h1 style={headingStyle}>{title} </h1> */}
+
+            {/* Inline Styling below */}
+            {/* <h1 style={{ color: 'red', backgroundColor: 'black', }}>{title} </h1> */}
+
+            {/* compile index.css files for styling component */}
+            <h1>{title}</h1>
+            <button className='btn'>Add</button>
         </header>
     )
 }
 
 Header.defaultProps = {
-    title: 'Task Tracker',
+    title: 'I love You Buttu <3',
 }
 
 Header.propTypes = {
     title: PropTypes.string.isRequired,
 }
+
+//Css in jsx
+
+// const headingStyle = {
+//      color: 'red',
+//      backgroundColor: 'black',
+// }
 
 export default Header
