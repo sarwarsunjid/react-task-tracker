@@ -11,7 +11,7 @@
  * then we can see the below line  
  */
 import PropTypes from 'prop-types'
-
+import Button from './Button'
 
 const Header = ({title}) => {
     return (
@@ -26,13 +26,13 @@ const Header = ({title}) => {
 
             {/* compile index.css files for styling component */}
             <h1>{title}</h1>
-            <button className='btn'>Add</button>
+            <Button />
         </header>
     )
 }
 
 Header.defaultProps = {
-    title: 'I love You Buttu <3',
+    title: 'Task Tracker',
 }
 
 Header.propTypes = {
