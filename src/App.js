@@ -1,17 +1,20 @@
-// Every return has a single element
-//jsx expression must have a single element
-//basic example of jsx expression
-const name ="Brad";
-const x = false;
+//Create New Component
+//import React from 'react'
+import Header from './components/Header.js'
 
 function App() {
   return (
     <div className="App">
-      <h1>Hello from react</h1>
-      <h2>Hello {name}</h2>
-      <h2>hello {x ? "Yes" : "No"}</h2>
+      <Header />
     </div>
   );
 }
+
+// class App extends React.Component{
+//   render(){
+//     return <h1>Hello from a class</h1>
+//   }
+// }
+
 
 export default App;
