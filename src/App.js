@@ -28,12 +28,18 @@ function App() {
             },
 ])
 
+//Delete Task
+const deleteTask = (id) => {
+  //console.log('delete', id)
+  SetTasks(tasks.filter((task) => task.id !==id))
+}
+ 
   return (
     <div className="container">
       {/* <Header title="Programmer" />  */}
       {/* <Header title={1} /> */}
       <Header />
-      <Tasks tasks ={tasks} />
+      <Tasks tasks ={tasks} onDelete= {deleteTask} />
     </div>
   );
 }
