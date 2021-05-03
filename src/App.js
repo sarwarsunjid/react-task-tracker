@@ -8,6 +8,9 @@ import Header from './components/Header'
 //import Task
 import Tasks from './components/Tasks'
 
+//Add Add Task
+import AddTask from './components/AddTask'
+
 function App() {
   //moved from Task.js file for global state
   const [tasks,SetTasks] = useState([
@@ -53,6 +56,7 @@ const toggleReminder = (id) => {
       {/* <Header title="Programmer" />  */}
       {/* <Header title={1} /> */}
       <Header />
+      <AddTask/>
       {tasks.length>0 ? (<Tasks tasks ={tasks} 
       onDelete= {deleteTask} onToggle={toggleReminder} />
       ) : (
