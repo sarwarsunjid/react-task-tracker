@@ -7,6 +7,7 @@ import Header from './components/Header'
 
 //import Task
 import Tasks from './components/Tasks'
+
 function App() {
   //moved from Task.js file for global state
   const [tasks,SetTasks] = useState([
@@ -38,7 +39,13 @@ const deleteTask = (id) => {
 
 //Toggle Reminder
 const toggleReminder = (id) => {
-  console.log(id);
+  //console.log(id);
+  //change reminder for particular state
+  SetTasks(tasks.map((task) => 
+  task.id === id ? { ...task, reminder: 
+    !task.reminder } : task
+    )
+  )
 }
  
   return (
