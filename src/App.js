@@ -1,8 +1,10 @@
 //We moved it from Tasks.js Code
 import {useState} from 'react' 
+
 //Create New Component
 //import React from 'react'
 import Header from './components/Header'
+
 //import Task
 import Tasks from './components/Tasks'
 function App() {
@@ -33,14 +35,22 @@ const deleteTask = (id) => {
   //console.log('delete', id)
   SetTasks(tasks.filter((task) => task.id !==id))
 }
+
+//Toggle Reminder
+const toggleReminder = (id) => {
+  console.log(id);
+}
  
   return (
     <div className="container">
       {/* <Header title="Programmer" />  */}
       {/* <Header title={1} /> */}
       <Header />
-      {tasks.length>0 ?<Tasks tasks ={tasks} 
-      onDelete= {deleteTask} />: 'No Task Added'}
+      {tasks.length>0 ? (<Tasks tasks ={tasks} 
+      onDelete= {deleteTask} onToggle={toggleReminder} />
+      ) : (
+        'No Task Added'
+      )}
     </div>
   );
 }
