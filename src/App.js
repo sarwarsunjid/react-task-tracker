@@ -34,6 +34,17 @@ function App() {
     },
 ])
 
+//Add Task
+const addTask = (task) => {
+  //console.log(task)
+  const id = Math.floor(Math.random() *
+  1000) + 1
+
+  //console.log(id)
+  const newTask = { id, ...task }
+  SetTasks([...tasks, newTask])
+}
+
 //Delete Task
 const deleteTask = (id) => {
   //console.log('delete', id)
@@ -56,7 +67,7 @@ const toggleReminder = (id) => {
       {/* <Header title="Programmer" />  */}
       {/* <Header title={1} /> */}
       <Header />
-      <AddTask/>
+      <AddTask onAdd={ addTask } />
       {tasks.length>0 ? (<Tasks tasks ={tasks} 
       onDelete= {deleteTask} onToggle={toggleReminder} />
       ) : (
