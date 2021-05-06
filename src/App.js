@@ -1,5 +1,5 @@
 //We moved it from Tasks.js Code
-import {useState} from 'react' 
+import {useState, useEffect} from 'react' 
 
 //Create New Component
 //import React from 'react'
@@ -15,6 +15,26 @@ function App() {
   const [showAddTask, setShowAddTask] = useState(false)
   //moved from Task.js file for global state
   const [tasks,SetTasks] = useState([])
+
+  useEffect(() => {
+    const getTasks = async() => {
+      const tasksFromServer = await fetchTasks()
+      SetTasks(tasksFromServer)
+    }
+
+    //fetchTasks()
+    getTasks()
+  }, [])
+
+
+//fetch Task
+const fetchTasks = async () => {
+  const res = await fetch('http://localhost:5000/tasks')
+  const data = await res.json()
+
+  //console.log(data)
+  return data;
+}
 
 //Add Task
 const addTask = (task) => {
