@@ -12,6 +12,7 @@ import Tasks from './components/Tasks'
 import AddTask from './components/AddTask'
 
 function App() {
+  const [showAddTask, setShowAddTask] = useState(false)
   //moved from Task.js file for global state
   const [tasks,SetTasks] = useState([
     {
@@ -66,8 +67,8 @@ const toggleReminder = (id) => {
     <div className="container">
       {/* <Header title="Programmer" />  */}
       {/* <Header title={1} /> */}
-      <Header />
-      <AddTask onAdd={ addTask } />
+      <Header onAdd={() =>setShowAddTask(!showAddTask)} />
+      { showAddTask && <AddTask onAdd={ addTask } />}
       {tasks.length>0 ? (<Tasks tasks ={tasks} 
       onDelete= {deleteTask} onToggle={toggleReminder} />
       ) : (

@@ -13,10 +13,10 @@
 import PropTypes from 'prop-types'
 import Button from './Button'
 
-const Header = ({title}) => {
-    const onClick = () => {
-        console.log('click');
-    }
+const Header = ({title, onAdd}) => {
+    // const onClick = () => {
+    //     console.log('click');
+    // }
     return (
         <header className = 'header'>
             {/* <h1>Hello {props.title} </h1> */}
@@ -29,7 +29,7 @@ const Header = ({title}) => {
 
             {/* compile index.css files for styling component */}
             <h1>{title}</h1>
-            <Button color ='green' text='Add' onClick= {onClick} />
+            <Button color ='green' text='Add' onClick= {onAdd} />
             {/* reusable component and different props */}
             {/* <Button color ='red' text='Hello' />
             <Button color ='green' text='Hello' /> */}
